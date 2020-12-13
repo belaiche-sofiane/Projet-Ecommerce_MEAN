@@ -1,0 +1,4 @@
+<div class="row justify-content-center">
+    <ul *ngFor='let produit of produits' > {{produit['nom']}} </ul>
+
+</div>

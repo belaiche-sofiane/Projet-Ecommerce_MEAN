@@ -1,0 +1,54 @@
+
+<br>
+<br>
+<br>
+
+  
+  
+  
+
+
+  
+<div  *ngIf="!(user|async)" class="card-header" > En vous connectant, découvrez nos produits</div>
+
+<p  style="color: green; margin-left: 30%;">  {{message}} </p>
+<div class="card-group" >
+    <div *ngFor='let produit of produits' >
+        
+      <img src="{{produit['photo']}}" width="300px" height="300px" class="card-img-top" >
+      <p class="card-body">
+
+        <h5 class="card-title"> {{produit['nom']}}</h5>
+    <details>
+    <summary> détails </summary>
+   
+    
+        <p class="card-text"> {{produit['type']}}</p>
+        <p class="card-text">{{produit['Prix']}} € </p>
+       <p class="card-text" *ngIf="produit.quantite == 0" style="color: red;"> Indisponible </p>
+      </details>
+        <div *ngIf= "user|async"  class="card-text mx-auto">
+         <p *ngIf="produit.quantite > 0 ">
+            <input  type="submit" value="Acheter" class="btn btn-outline-primary" 
+             
+            (click)="ajoutpanier(produit)" />  </p>
+           
+          </div>
+         
+            
+    
+</div>
+
+</div>
+
+ 
+
+
+
+
+
+
+
+
+
+

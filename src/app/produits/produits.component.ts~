@@ -1,0 +1,22 @@
+import { Component, OnInit } from '@angular/core';
+import { ProduitsService } from '../produits.service';
+import { Observable } from 'rxjs';
+import { ActivatedRoute, Params } from '@angular/router';
+@Component({
+  selector: 'app-produits',
+  templateUrl: './produits.component.html',
+  styleUrls: ['./produits.component.css']
+})
+export class ProduitsComponent implements OnInit {
+private produits: object[];
+  constructor(private produitService:ProduitsService){
+   
+   }
+
+  ngOnInit(){
+    console.log("Dans this.ngOnInit du composant produits");
+      this.produitService.getProduits().subscribe(produits=>{
+				this.produits = produits;
+  });
+  }
+  }

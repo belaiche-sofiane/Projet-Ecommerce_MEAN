@@ -1,0 +1,57 @@
+<div *ngIf="user|async ">
+<h1> Panier({{panier.length}} )</h1>
+
+
+
+
+    <p style="color: red; margin-left: 30%;"> {{message}} </p>
+<div class="table table-image">
+    <table class="table table" id="table">
+        
+        <thead>
+        <tr style="width:20%;"> 
+            
+            <th> Produit</th>
+            <th> Prix </th>
+           
+            <th> Image </th>
+            <th> Categorie</th>
+            <th> Quantité</th>
+            <th> Action</th>
+            <th> Utilisateur </th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    <tr *ngFor='let produit of panier' >
+        
+
+       
+        <td> {{produit['nom'] }}</td>  
+        <td> {{produit['Prix'] }}  € </td>
+        <td>   <img src="{{produit['photo']}}" width="100px" height="100px"> </td>
+       
+             
+
+        <td>  {{produit['type'] }} 
+            
+            
+        </td>
+        <td><input type="submit" value="+" class="btn btn-warning"  (click)="augmentationQuantite(produit)">  </td>
+        <td>  <p class="card-text mx-auto"><input type="submit" value="Supprimer" 
+            class="btn btn-danger"  (click)="Supprimer(produit.id)" /> </p>   
+        
+        </td> 
+        <td> {{produit.email}} </td>
+
+    </tr>
+</tbody>
+</table> 
+
+</div> 
+
+</div>
+
+
+
+    

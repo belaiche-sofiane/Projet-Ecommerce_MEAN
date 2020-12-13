@@ -1,0 +1,25 @@
+
+ <table  class="table table-striped">
+	
+    <thead>
+      <tr>
+        <th> Categories</th>
+        <th> Action </th>
+        
+      </tr>
+	</thead>
+	
+    <tbody>
+	
+      <tr *ngFor="let categorie of categories">
+        <td>{{categorie}} </td>
+        <td> <button type="button" class="btn btn-info" (click)="produitsParCategorie(categorie)">Voir</button></td>
+       
+      </tr>
+	
+	</tbody>
+
+
+  </table>
+ 
+

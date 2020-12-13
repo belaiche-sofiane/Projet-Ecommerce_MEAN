@@ -1,0 +1,36 @@
+  p:hover {
+    text-decoration: underline;
+    font-weight:bold;
+    color:black;
+    font-size: 130%;
+
+  }
+  p{
+    margin-top: 150px;
+  }   
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 150px;
+    text-align: center;
+    text-emphasis-position: inherit;
+    margin-left: 19px;
+    margin-right: 19px;
+    
+}
+
+.card {
+    display: grid;
+    grid-template-rows: max-content 200px 1fr;
+    justify-content: center;
+}
+.card:hover{
+  
+  border-color: red;
+  
+  
+} 
+#h{
+  background-color: lavender;
+  
+}  
